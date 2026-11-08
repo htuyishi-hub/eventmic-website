@@ -10,13 +10,11 @@ import {
   Volume2, 
   Sliders, 
   Sparkles,
-  ExternalLink,
   CheckCircle2,
   QrCode,
   Users,
   WifiOff,
-  Zap,
-  ArrowRight
+  Zap
 } from 'lucide-react';
 
 export default function App() {
@@ -227,7 +225,7 @@ export default function App() {
             Deploy the Revolution
           </h2>
           <p className="text-sm sm:text-base text-slate max-w-xl mx-auto">
-            Standalone executables with bundled headless P2P daemons. Ready for stages, auditoriums, and town halls.
+            Ready for stages, auditoriums, and halls of any size.
           </p>
         </div>
 
@@ -257,15 +255,15 @@ export default function App() {
               <div className="space-y-2.5 mb-8 text-xs text-slate">
                 <div className="flex items-center gap-2">
                   <Sliders className="w-3.5 h-3.5 text-coral" />
-                  <span>Projector Mirroring &amp; Live Speaker Lower-Thirds</span>
+                  <span>Displays the fair waiting list on your projector</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="w-3.5 h-3.5 text-coral" />
-                  <span>One-Touch Host Override Panic Mute</span>
+                  <span>Instantly mute anyone with the Host Override button</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Radio className="w-3.5 h-3.5 text-coral" />
-                  <span>Bundled standalone headless Jami OpenDHT daemon</span>
+                  <span>Everything you need is built right in—no complex setup</span>
                 </div>
               </div>
             </div>
@@ -278,18 +276,6 @@ export default function App() {
                 <Download className="w-5 h-5" />
                 <span>Download Host Console</span>
               </a>
-
-              <div className="mt-3 text-center">
-                <a
-                  href="https://github.com/htuyishi-hub/eventmic-admin/releases/latest"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-slate hover:text-white inline-flex items-center gap-1 transition-colors"
-                >
-                  <span>Also available for Linux (.AppImage / .deb)</span>
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
             </div>
           </div>
 
@@ -318,15 +304,15 @@ export default function App() {
               <div className="space-y-2.5 mb-8 text-xs text-slate">
                 <div className="flex items-center gap-2">
                   <Volume2 className="w-3.5 h-3.5 text-coral" />
-                  <span>Hardware speaker output auto-suppressed (Zero howl)</span>
+                  <span>Built-in anti-echo technology prevents screeching</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <QrCode className="w-3.5 h-3.5 text-coral" />
-                  <span>Direct QR Scan &amp; Peer-to-Peer Room Sharing</span>
+                  <span>Scan a friend's screen to join instantly</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="w-3.5 h-3.5 text-coral" />
-                  <span>Runs as an un-killable stage foreground service</span>
+                  <span>Runs smoothly in the background until it's your turn to speak</span>
                 </div>
               </div>
             </div>
@@ -339,18 +325,6 @@ export default function App() {
                 <Download className="w-5 h-5 text-coral" />
                 <span>Download Attendee App</span>
               </a>
-
-              <div className="mt-3 text-center">
-                <a
-                  href="https://github.com/htuyishi-hub/eventmic-android"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-slate hover:text-white inline-flex items-center gap-1 transition-colors"
-                >
-                  <span>View Android source &amp; CI workflows</span>
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
             </div>
           </div>
         </div>
@@ -377,7 +351,7 @@ export default function App() {
                 Venue internet went down? Who cares. EventMic's peer-to-peer magic works flawlessly even if the building loses Wi-Fi connection.
               </p>
               <p className="text-slate/75 text-xs sm:text-sm mt-2">
-                Signaling and audio stream directly across the local subnet via OpenDHT. Zero external servers. Zero downtime.
+                Your voices route directly between phones and the host computer. No external servers, no cloud accounts, and zero downtime.
               </p>
             </div>
           </div>
