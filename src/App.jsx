@@ -230,7 +230,7 @@ export default function App() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Card 1: The Host Console (Windows) */}
+          {/* Card 1: The Host Console */}
           <div className="bg-surface rounded-2xl p-8 border border-surface/90 flex flex-col justify-between shadow-2xl relative overflow-hidden group hover:border-coral/50 transition-all">
             <div className="absolute top-0 right-0 w-36 h-36 bg-coral/5 rounded-full blur-2xl group-hover:bg-coral/15 transition-all pointer-events-none" />
 
@@ -241,7 +241,7 @@ export default function App() {
 
               <div className="flex items-center justify-between mb-3">
                 <h3 className="text-xl font-bold text-white">
-                  The Host Console (Windows)
+                  The Host Console
                 </h3>
                 <span className="text-xs bg-obsidian px-2.5 py-1 rounded text-coral font-bold border border-surface">
                   {latestVersion}
@@ -274,8 +274,20 @@ export default function App() {
                 className="w-full py-4 px-6 rounded-xl bg-coral hover:bg-coralHover text-white font-bold text-center flex items-center justify-center gap-2 shadow-lg shadow-coral/25 transition-all transform active:scale-[0.99]"
               >
                 <Download className="w-5 h-5" />
-                <span>Download Host Console</span>
+                <span>Download for Windows (.exe)</span>
               </a>
+
+              <div className="mt-3.5 text-center">
+                <a
+                  href="https://github.com/htuyishi-hub/eventmic-admin/releases/latest"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-slate hover:text-white transition-colors inline-flex items-center gap-1.5 py-1 px-3 rounded-md hover:bg-obsidian/60 group/linux"
+                >
+                  <span>Using Linux?</span>
+                  <span className="text-coral font-medium group-hover/linux:underline">Download Linux (.AppImage / .deb) &rarr;</span>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -325,6 +337,14 @@ export default function App() {
                 <Download className="w-5 h-5 text-coral" />
                 <span>Download Attendee App</span>
               </a>
+
+              <div className="mt-3.5 text-center">
+                <span className="text-xs text-slate/80 inline-flex items-center gap-1.5 py-1 px-3">
+                  <span>Android 8.0+</span>
+                  <span className="text-slate/40">•</span>
+                  <span>Standalone APK</span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
