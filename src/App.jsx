@@ -11,7 +11,12 @@ import {
   Sliders, 
   Sparkles,
   ExternalLink,
-  CheckCircle2
+  CheckCircle2,
+  QrCode,
+  Users,
+  WifiOff,
+  Zap,
+  ArrowRight
 } from 'lucide-react';
 
 export default function App() {
@@ -39,20 +44,20 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-obsidian text-white flex flex-col selection:bg-coral selection:text-white">
+    <div className="min-h-screen bg-obsidian text-white flex flex-col selection:bg-coral selection:text-white font-sans antialiased">
       {/* Navigation */}
       <header className="border-b border-surface/80 bg-obsidian/80 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 h-18 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-coral flex items-center justify-center shadow-lg shadow-coral/20">
+            <div className="w-10 h-10 rounded-xl bg-coral flex items-center justify-center shadow-lg shadow-coral/25">
               <Mic className="w-5 h-5 text-white" />
             </div>
             <div>
               <span className="font-extrabold text-lg tracking-wider text-white">
                 EVENTMIC
               </span>
-              <span className="ml-2 text-xs uppercase tracking-widest text-coral font-bold px-2 py-0.5 rounded bg-surface border border-surface/90">
-                P2P Engine
+              <span className="ml-2.5 text-[10px] uppercase tracking-widest text-coral font-bold px-2 py-0.5 rounded-full bg-surface border border-coral/30">
+                P2P Magic
               </span>
             </div>
           </div>
@@ -62,7 +67,7 @@ export default function App() {
               href="https://github.com/htuyishi-hub"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-slate hover:text-white transition-colors px-3 py-1.5 rounded-lg hover:bg-surface"
+              className="flex items-center gap-2 text-sm text-slate hover:text-white transition-colors px-3 py-1.5 rounded-lg hover:bg-surface border border-transparent hover:border-surface/80"
             >
               <Github className="w-4 h-4" />
               <span>GitHub</span>
@@ -71,70 +76,174 @@ export default function App() {
         </div>
       </header>
 
-      {/* Hero Section */}
+      {/* 1. Hero Section */}
       <section className="relative overflow-hidden pt-20 pb-16 px-6">
         {/* Ambient Glows */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-coral/10 blur-[130px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[340px] bg-coral/15 blur-[140px] rounded-full pointer-events-none" />
         
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface border border-surface text-slate text-xs font-semibold uppercase tracking-wider mb-8">
-            <Radio className="w-3.5 h-3.5 text-coral animate-pulse" />
-            <span>Decentralized Stage Audio Reinforcement</span>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface border border-coral/30 text-coral text-xs font-bold uppercase tracking-widest mb-8 shadow-md">
+            <Sparkles className="w-3.5 h-3.5 text-coral animate-pulse" />
+            <span>The Wireless Mic Revolution</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-white leading-[1.1] mb-6">
-            Live Event Audio, <br />
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white leading-[1.08] mb-8">
+            Magic in the <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-coral via-coralHover to-white">
-              Democratized.
+              Palm of Their Hands.
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-slate max-w-2xl mx-auto leading-relaxed mb-12">
-            A professional, zero-latency wireless microphone system powered by OpenDHT. Turn audience smartphones into stage microphones with strict democratic FIFO queue control.
+          <p className="text-lg sm:text-2xl text-slate max-w-3xl mx-auto leading-relaxed mb-12 font-normal">
+            Stop passing the mic. Give your entire audience the superpower to speak directly to the room using the smartphone they already own. Crystal-clear, zero delay, and completely revolutionary.
           </p>
 
-          {/* Feature Badges */}
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-6 text-xs sm:text-sm text-slate font-medium">
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface/60 border border-surface">
-              <CheckCircle2 className="w-4 h-4 text-coral" />
-              <span>10ms Opus LowDelay</span>
+          {/* Badges */}
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-5 text-xs sm:text-sm text-slate font-semibold">
+            <div className="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-surface/80 border border-surface shadow-sm">
+              <Zap className="w-4 h-4 text-coral" />
+              <span className="text-white">Instant Connection</span>
             </div>
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface/60 border border-surface">
-              <CheckCircle2 className="w-4 h-4 text-coral" />
-              <span>Acoustic Feedback Isolation</span>
+            <div className="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-surface/80 border border-surface shadow-sm">
+              <Sparkles className="w-4 h-4 text-coral" />
+              <span className="text-white">Acoustic Magic</span>
             </div>
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface/60 border border-surface">
-              <CheckCircle2 className="w-4 h-4 text-coral" />
-              <span>Strict Democratic FIFO</span>
+            <div className="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-surface/80 border border-surface shadow-sm">
+              <ShieldCheck className="w-4 h-4 text-coral" />
+              <span className="text-white">Total Host Control</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Download Section (Two Cards on Surface #0F1E36) */}
-      <section className="py-12 px-6 max-w-5xl mx-auto w-full">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2">
-            Download Client &amp; Console
+      {/* 2. The "Wow" Factor (Visual Row / 3 Steps) */}
+      <section className="py-16 px-6 max-w-6xl mx-auto w-full">
+        <div className="text-center mb-12">
+          <div className="text-coral text-xs font-bold uppercase tracking-widest mb-2">
+            Effortless Experience
+          </div>
+          <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
+            How the Magic Happens
           </h2>
-          <p className="text-sm text-slate">
-            Open-source binaries ready for immediate venue deployment.
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {/* Step 1: Scan & Enter */}
+          <div className="bg-surface/70 rounded-2xl p-8 border border-surface hover:border-coral/40 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden shadow-xl">
+            <div className="absolute top-0 right-0 w-28 h-28 bg-coral/5 rounded-full blur-xl group-hover:bg-coral/10 transition-all pointer-events-none" />
+            
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-12 h-12 rounded-xl bg-obsidian border border-surface flex items-center justify-center text-coral shadow-inner">
+                  <QrCode className="w-6 h-6" />
+                </div>
+                <span className="text-3xl font-black text-slate/25 group-hover:text-coral/40 transition-colors">
+                  01
+                </span>
+              </div>
+
+              <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                1. Scan &amp; Enter
+              </h3>
+
+              <p className="text-slate text-sm leading-relaxed">
+                No accounts. No passwords. Just point your camera at the big screen and you are instantly in the room.
+              </p>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-surface/80 flex items-center gap-2 text-xs text-coral font-semibold">
+              <CheckCircle2 className="w-4 h-4" />
+              <span>Zero friction onboarding</span>
+            </div>
+          </div>
+
+          {/* Step 2: The Democratic Queue */}
+          <div className="bg-surface/70 rounded-2xl p-8 border border-surface hover:border-coral/40 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden shadow-xl">
+            <div className="absolute top-0 right-0 w-28 h-28 bg-coral/5 rounded-full blur-xl group-hover:bg-coral/10 transition-all pointer-events-none" />
+            
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-12 h-12 rounded-xl bg-obsidian border border-surface flex items-center justify-center text-coral shadow-inner">
+                  <Users className="w-6 h-6" />
+                </div>
+                <span className="text-3xl font-black text-slate/25 group-hover:text-coral/40 transition-colors">
+                  02
+                </span>
+              </div>
+
+              <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                2. The Democratic Queue
+              </h3>
+
+              <p className="text-slate text-sm leading-relaxed">
+                Tap to raise your hand. The massive projector shows exactly who is next in line, keeping the room fair, transparent, and engaged.
+              </p>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-surface/80 flex items-center gap-2 text-xs text-coral font-semibold">
+              <CheckCircle2 className="w-4 h-4" />
+              <span>Strict FIFO transparency</span>
+            </div>
+          </div>
+
+          {/* Step 3: Pure Magic */}
+          <div className="bg-surface/70 rounded-2xl p-8 border border-surface hover:border-coral/40 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden shadow-xl">
+            <div className="absolute top-0 right-0 w-28 h-28 bg-coral/5 rounded-full blur-xl group-hover:bg-coral/10 transition-all pointer-events-none" />
+            
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-12 h-12 rounded-xl bg-obsidian border border-surface flex items-center justify-center text-coral shadow-inner">
+                  <Sparkles className="w-6 h-6" />
+                </div>
+                <span className="text-3xl font-black text-slate/25 group-hover:text-coral/40 transition-colors">
+                  03
+                </span>
+              </div>
+
+              <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                3. Pure Magic
+              </h3>
+
+              <p className="text-slate text-sm leading-relaxed">
+                When the host grants you the floor, your phone transforms into a stadium-grade wireless microphone. You speak, and the whole room listens.
+              </p>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-surface/80 flex items-center gap-2 text-xs text-coral font-semibold">
+              <CheckCircle2 className="w-4 h-4" />
+              <span>10ms Opus LowDelay audio</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Download Section */}
+      <section className="py-14 px-6 max-w-5xl mx-auto w-full">
+        <div className="text-center mb-12">
+          <div className="text-coral text-xs font-bold uppercase tracking-widest mb-2">
+            Production Ready
+          </div>
+          <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white mb-3">
+            Deploy the Revolution
+          </h2>
+          <p className="text-sm sm:text-base text-slate max-w-xl mx-auto">
+            Standalone executables with bundled headless P2P daemons. Ready for stages, auditoriums, and town halls.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Card 1: Admin Console */}
+          {/* Card 1: The Host Console (Windows) */}
           <div className="bg-surface rounded-2xl p-8 border border-surface/90 flex flex-col justify-between shadow-2xl relative overflow-hidden group hover:border-coral/50 transition-all">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-coral/5 rounded-full blur-2xl group-hover:bg-coral/10 transition-all pointer-events-none" />
+            <div className="absolute top-0 right-0 w-36 h-36 bg-coral/5 rounded-full blur-2xl group-hover:bg-coral/15 transition-all pointer-events-none" />
 
             <div>
               <div className="w-12 h-12 rounded-xl bg-obsidian border border-surface flex items-center justify-center text-coral mb-6 shadow-inner">
                 <Monitor className="w-6 h-6" />
               </div>
 
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center justify-between mb-3">
                 <h3 className="text-xl font-bold text-white">
-                  EventMic Admin (Windows/Linux)
+                  The Host Console (Windows)
                 </h3>
                 <span className="text-xs bg-obsidian px-2.5 py-1 rounded text-coral font-bold border border-surface">
                   {latestVersion}
@@ -142,13 +251,17 @@ export default function App() {
               </div>
 
               <p className="text-slate text-sm leading-relaxed mb-6">
-                The central host dashboard. Plugs into the venue sound system. Features projector-ready queue mirroring, active speaker broadcast lower-thirds, and instant Host Override mute controls.
+                Your command center. Plug your laptop into the venue's sound system, project the waiting list, and control the room with the ultimate Host Override mute button.
               </p>
 
-              <div className="space-y-2 mb-8 text-xs text-slate">
+              <div className="space-y-2.5 mb-8 text-xs text-slate">
                 <div className="flex items-center gap-2">
                   <Sliders className="w-3.5 h-3.5 text-coral" />
-                  <span>Hardware AEC, AGC &amp; Noise Suppression Controls</span>
+                  <span>Projector Mirroring &amp; Live Speaker Lower-Thirds</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="w-3.5 h-3.5 text-coral" />
+                  <span>One-Touch Host Override Panic Mute</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Radio className="w-3.5 h-3.5 text-coral" />
@@ -163,7 +276,7 @@ export default function App() {
                 className="w-full py-4 px-6 rounded-xl bg-coral hover:bg-coralHover text-white font-bold text-center flex items-center justify-center gap-2 shadow-lg shadow-coral/25 transition-all transform active:scale-[0.99]"
               >
                 <Download className="w-5 h-5" />
-                <span>Download for Windows ({latestVersion})</span>
+                <span>Download Host Console</span>
               </a>
 
               <div className="mt-3 text-center">
@@ -173,42 +286,46 @@ export default function App() {
                   rel="noopener noreferrer"
                   className="text-xs text-slate hover:text-white inline-flex items-center gap-1 transition-colors"
                 >
-                  <span>Looking for Linux .AppImage / .deb?</span>
+                  <span>Also available for Linux (.AppImage / .deb)</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Card 2: Attendee Mic */}
-          <div className="bg-surface rounded-2xl p-8 border border-surface/90 flex flex-col justify-between shadow-2xl relative overflow-hidden group hover:border-slate/50 transition-all">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-slate/5 rounded-full blur-2xl group-hover:bg-slate/10 transition-all pointer-events-none" />
+          {/* Card 2: The Attendee Mic (Android) */}
+          <div className="bg-surface rounded-2xl p-8 border border-surface/90 flex flex-col justify-between shadow-2xl relative overflow-hidden group hover:border-coral/50 transition-all">
+            <div className="absolute top-0 right-0 w-36 h-36 bg-coral/5 rounded-full blur-2xl group-hover:bg-coral/15 transition-all pointer-events-none" />
 
             <div>
-              <div className="w-12 h-12 rounded-xl bg-obsidian border border-surface flex items-center justify-center text-slate mb-6 shadow-inner">
+              <div className="w-12 h-12 rounded-xl bg-obsidian border border-surface flex items-center justify-center text-coral mb-6 shadow-inner">
                 <Smartphone className="w-6 h-6" />
               </div>
 
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center justify-between mb-3">
                 <h3 className="text-xl font-bold text-white">
-                  EventMic Attendee (Android)
+                  The Attendee Mic (Android)
                 </h3>
-                <span className="text-xs bg-obsidian px-2.5 py-1 rounded text-slate font-bold border border-surface">
+                <span className="text-xs bg-obsidian px-2.5 py-1 rounded text-coral font-bold border border-surface">
                   APK
                 </span>
               </div>
 
               <p className="text-slate text-sm leading-relaxed mb-6">
-                Turns any smartphone into a wireless microphone. Lightweight headless client stripped of all chat bloat. Includes display name onboarding and one-tap OpenDHT "Raise Hand" queuing.
+                The magic wand for your audience. A beautifully simple app that turns their phone into a professional mic with built-in acoustic feedback elimination—no screeching, just clear voices.
               </p>
 
-              <div className="space-y-2 mb-8 text-xs text-slate">
+              <div className="space-y-2.5 mb-8 text-xs text-slate">
                 <div className="flex items-center gap-2">
-                  <Volume2 className="w-3.5 h-3.5 text-slate" />
-                  <span>Hardware speaker output auto-suppressed to eliminate howl</span>
+                  <Volume2 className="w-3.5 h-3.5 text-coral" />
+                  <span>Hardware speaker output auto-suppressed (Zero howl)</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-3.5 h-3.5 text-slate" />
+                  <QrCode className="w-3.5 h-3.5 text-coral" />
+                  <span>Direct QR Scan &amp; Peer-to-Peer Room Sharing</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="w-3.5 h-3.5 text-coral" />
                   <span>Runs as an un-killable stage foreground service</span>
                 </div>
               </div>
@@ -217,10 +334,10 @@ export default function App() {
             <div>
               <a
                 href="https://github.com/htuyishi-hub/eventmic-android/releases/latest/download/eventmic-attendee.apk"
-                className="w-full py-4 px-6 rounded-xl border-2 border-slate/40 hover:border-white text-white font-bold text-center flex items-center justify-center gap-2 hover:bg-white/5 transition-all transform active:scale-[0.99]"
+                className="w-full py-4 px-6 rounded-xl border-2 border-coral/60 hover:border-coral hover:bg-coral/10 text-white font-bold text-center flex items-center justify-center gap-2 transition-all transform active:scale-[0.99]"
               >
-                <Download className="w-5 h-5 text-slate" />
-                <span>Download APK</span>
+                <Download className="w-5 h-5 text-coral" />
+                <span>Download Attendee App</span>
               </a>
 
               <div className="mt-3 text-center">
@@ -230,7 +347,7 @@ export default function App() {
                   rel="noopener noreferrer"
                   className="text-xs text-slate hover:text-white inline-flex items-center gap-1 transition-colors"
                 >
-                  <span>View Android source &amp; CI build workflows</span>
+                  <span>View Android source &amp; CI workflows</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
@@ -239,44 +356,62 @@ export default function App() {
         </div>
       </section>
 
-      {/* Architecture Highlights Section */}
-      <section className="py-16 px-6 max-w-5xl mx-auto w-full border-t border-surface/80 mt-8">
-        <h3 className="text-center text-xs font-bold uppercase tracking-widest text-slate mb-8">
-          Stage-Grade Technology Stack
-        </h3>
+      {/* 4. The Kicker (Footer Value Prop): Unbreakable Offline Mode */}
+      <section className="py-12 px-6 max-w-5xl mx-auto w-full">
+        <div className="bg-gradient-to-r from-surface via-surface/90 to-surface rounded-2xl p-8 sm:p-10 border-2 border-coral/40 relative overflow-hidden shadow-2xl">
+          <div className="absolute -top-12 -right-12 w-48 h-48 bg-coral/15 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="grid sm:grid-cols-3 gap-6 text-center">
-          <div className="bg-surface/40 p-6 rounded-xl border border-surface">
-            <h4 className="text-white font-bold mb-2">Decentralized OpenDHT</h4>
-            <p className="text-xs text-slate leading-relaxed">
-              Signaling runs on peer-to-peer distributed hash tables. No cloud accounts, no central servers, zero monthly bills.
-            </p>
-          </div>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 relative z-10">
+            <div className="w-16 h-16 rounded-2xl bg-obsidian border border-coral/40 flex items-center justify-center text-coral flex-shrink-0 shadow-lg">
+              <WifiOff className="w-8 h-8" />
+            </div>
 
-          <div className="bg-surface/40 p-6 rounded-xl border border-surface">
-            <h4 className="text-white font-bold mb-2">10ms Opus LowDelay</h4>
-            <p className="text-xs text-slate leading-relaxed">
-              Audio frames packetize at 10ms with constant bitrate. Tuned specifically for public speaking and Q&amp;A sessions.
-            </p>
-          </div>
-
-          <div className="bg-surface/40 p-6 rounded-xl border border-surface">
-            <h4 className="text-white font-bold mb-2">Acoustic Loop Elimination</h4>
-            <p className="text-xs text-slate leading-relaxed">
-              Attendee phone speaker drivers are hardware-muted the moment the mic goes live, preventing screeching feedback loops.
-            </p>
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-2 text-coral text-xs font-bold uppercase tracking-widest mb-1">
+                <span>Battle-Tested Resilience</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-2">
+                Unbreakable Offline Mode
+              </h3>
+              <p className="text-slate text-base sm:text-lg leading-relaxed">
+                Venue internet went down? Who cares. EventMic's peer-to-peer magic works flawlessly even if the building loses Wi-Fi connection.
+              </p>
+              <p className="text-slate/75 text-xs sm:text-sm mt-2">
+                Signaling and audio stream directly across the local subnet via OpenDHT. Zero external servers. Zero downtime.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="mt-auto border-t border-surface/80 py-8 px-6 text-center text-xs text-slate">
-        <p>
-          EventMic — Open Source Wireless Event Audio. Released under GPLv3 / MIT.
-        </p>
-        <p className="mt-2 text-slate/70">
-          Distribution synced live with GitHub Releases.
-        </p>
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p>
+            EventMic — Open Source Wireless Event Audio. Released under GPLv3 / MIT.
+          </p>
+          <div className="flex items-center gap-4 text-slate/80">
+            <a 
+              href="https://github.com/htuyishi-hub/eventmic-admin" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-coral transition-colors"
+            >
+              Admin Desktop
+            </a>
+            <span>•</span>
+            <a 
+              href="https://github.com/htuyishi-hub/eventmic-android" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-coral transition-colors"
+            >
+              Android Attendee
+            </a>
+            <span>•</span>
+            <span className="text-slate/60">Distribution synced with GitHub Releases</span>
+          </div>
+        </div>
       </footer>
     </div>
   );
