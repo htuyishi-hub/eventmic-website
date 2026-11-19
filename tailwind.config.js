@@ -7,13 +7,42 @@ export default {
   theme: {
     extend: {
       colors: {
-        obsidian: '#070D19',
-        surface: '#0F1E36',
-        coral: '#FF6B4A',
-        coralHover: '#FF8266',
-        slate: '#8E9BAE',
-      }
+        background: 'var(--color-bg)',
+        surface: {
+          DEFAULT: 'var(--color-surface)',
+          hover: 'var(--color-surface-hover)',
+        },
+        border: 'var(--color-border)',
+        foreground: 'var(--color-text)',
+        muted: 'var(--color-muted)',
+        accent: {
+          DEFAULT: 'var(--color-accent)',
+          hover: '#2563EB',
+        },
+        live: 'var(--color-live)',
+        success: 'var(--color-success)',
+        warning: 'var(--color-warning)',
+      },
+      fontFamily: {
+        sans: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          'Helvetica',
+          'Arial',
+          'sans-serif',
+        ],
+        mono: [
+          'ui-monospace',
+          'SFMono-Regular',
+          'Menlo',
+          'Monaco',
+          'Consolas',
+          'monospace',
+        ],
+      },
     },
   },
   plugins: [],
-}
+};
