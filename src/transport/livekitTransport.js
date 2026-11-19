@@ -73,7 +73,12 @@ export function mapConnectionState(lkState) {
  */
 export class LiveKitTransport {
   constructor(options = {}) {
-    this.apiBase = options.apiBase || import.meta.env?.VITE_API_BASE || '/api';
+    let rawBase = options.apiBase || import.meta.env?.VITE_API_BASE || '/api';
+    rawBase = String(rawBase).trim().replace(/\/+$/, '');
+    if (!rawBase.endsWith('/api') && !rawBase.includes('/api')) {
+      rawBase = `${rawBase}/api`;
+    }
+    this.apiBase = rawBase;
     this.room = null;
     this.role = null; // 'host' | 'attendee'
     this.code = null;
