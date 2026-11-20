@@ -1,9 +1,10 @@
 import React from 'react';
 
 /**
- * Main DM Logo Mark — Horizontal acoustic pyramid/drop (10 rounded pill rows).
- * - build: animates lines in one-by-one to build the shape once (opening splash).
+ * Main DM Logo Mark — Vertical drop/pyramid of horizontal rounded bars.
+ * - build: animates lines in one-by-one to build the shape on site open.
  * - loop: continuously builds the shape one-by-one while waiting/loading.
+ * - default (settled in place): unlimited subtle acoustic pulse across the bars.
  * - "DM" is plain text placed after the mark (see DMLogo).
  */
 const ROWS = [
@@ -26,9 +27,11 @@ const MARK_CSS = `
 .dm-row{transform-box:fill-box;transform-origin:center}
 .dm-build .dm-row{opacity:0;transform:scaleX(.25);animation:dm-in .28s cubic-bezier(.22,1,.36,1) calc(var(--i) * 65ms) forwards}
 .dm-loop .dm-row{opacity:0;transform:scaleX(.25);animation:dm-cycle 1.6s ease-in-out calc(var(--i) * 70ms) infinite}
+.dm-alive .dm-row{animation:dm-breathe 1.8s ease-in-out calc(var(--i) * 90ms) infinite alternate}
 @keyframes dm-in{to{opacity:1;transform:scaleX(1)}}
 @keyframes dm-cycle{0%{opacity:0;transform:scaleX(.25)}20%,65%{opacity:1;transform:scaleX(1)}85%,100%{opacity:0;transform:scaleX(.25)}}
-@media (prefers-reduced-motion:reduce){.dm-build .dm-row,.dm-loop .dm-row{animation:none;opacity:1;transform:none}}
+@keyframes dm-breathe{0%{transform:scaleX(.84);opacity:.78}100%{transform:scaleX(1.06);opacity:1}}
+@media (prefers-reduced-motion:reduce){.dm-build .dm-row,.dm-loop .dm-row,.dm-alive .dm-row{animation:none;opacity:1;transform:none}}
 `;
 
 export function DMMark({
@@ -36,10 +39,11 @@ export function DMMark({
   color = 'currentColor',
   build = false,
   loop = false,
+  animate = true,
   className = '',
   title = 'DM'
 }) {
-  const modeClass = loop ? 'dm-loop' : build ? 'dm-build' : '';
+  const modeClass = loop ? 'dm-loop' : build ? 'dm-build' : animate ? 'dm-alive' : '';
   return (
     <svg
       viewBox="16 12 168 186"
@@ -141,12 +145,13 @@ export function DMLogo({
   showText = true,
   build = false,
   loop = false,
+  animate = true,
   color = 'currentColor',
   className = ''
 }) {
   return (
     <span className={`inline-flex items-center gap-2 select-none ${className}`} style={{ color }}>
-      <DMMark size={size} color={color} build={build} loop={loop} />
+      <DMMark size={size} color={color} build={build} loop={loop} animate={animate} />
       {showText && (
         <span style={{ fontWeight: 800, fontSize: size * 0.62, letterSpacing: '0.04em', lineHeight: 1 }}>DM</span>
       )}

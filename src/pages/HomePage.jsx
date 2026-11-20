@@ -25,7 +25,7 @@ export function HomePage() {
       {/* Header / Hero */}
       <div className="pt-12 text-center space-y-4">
         <div className="flex justify-center text-foreground">
-          <DMMark size={96} build />
+          <DMMark size={96} />
         </div>
 
         <div className="space-y-2">
