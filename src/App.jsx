@@ -6,11 +6,13 @@ import { HomePage } from './pages/HomePage.jsx';
 import { HostPage } from './pages/HostPage.jsx';
 import { JoinPage } from './pages/JoinPage.jsx';
 import { NotFoundPage } from './pages/NotFoundPage.jsx';
+import { DMBootSplash } from './components/brand/DMBootSplash.jsx';
 
 export default function App() {
   return (
     <TransportProvider>
       <SessionProvider>
+        <DMBootSplash />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<HomePage />} />
