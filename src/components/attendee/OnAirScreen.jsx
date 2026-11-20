@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Mic, Radio, Square } from 'lucide-react';
+import { Radio, Square } from 'lucide-react';
+import { DMMark } from '../brand/DMLogo.jsx';
 import { Button } from '../ui/Button.jsx';
 import { LevelMeter } from '../host/LevelMeter.jsx';
 import { AudioMeter } from '../../lib/audioMeter.js';
@@ -119,8 +120,8 @@ export function OnAirScreen({
 
         {/* Big Pulsing Mic Avatar */}
         <div className="p-8 bg-surface border-2 border-live rounded-3xl shadow-2xl flex flex-col items-center space-y-6 my-6 shadow-live/20">
-          <div className="w-28 h-28 rounded-full bg-live/20 border-2 border-live flex items-center justify-center text-live animate-pulse shadow-lg shadow-live/40">
-            <Mic size={52} />
+          <div className="w-32 h-32 rounded-full bg-background border-2 border-red-600 ring-4 ring-red-600/20 flex items-center justify-center text-foreground">
+            <DMMark size={72} recording />
           </div>
 
           <div className="w-full space-y-2">

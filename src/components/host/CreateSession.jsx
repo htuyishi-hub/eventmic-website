@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Mic, Play, RefreshCw, Trash2 } from 'lucide-react';
+import { Play, RefreshCw, Trash2 } from 'lucide-react';
+import { DMLogo } from '../brand/DMLogo.jsx';
 import { Button } from '../ui/Button.jsx';
 
 const HOST_STORAGE_KEY = 'eventmic_host_session';
@@ -51,8 +52,8 @@ export function CreateSession({ onStartSession, onResumeSession }) {
   return (
     <div className="min-h-screen flex items-center justify-center p-6 bg-background">
       <div className="w-full max-w-lg bg-surface border border-border rounded-2xl p-8 shadow-2xl">
-        <div className="w-14 h-14 rounded-2xl bg-accent/20 border border-accent/40 flex items-center justify-center text-accent mb-6 shadow-inner mx-auto">
-          <Mic className="w-7 h-7" />
+        <div className="flex justify-center mb-5">
+          <DMLogo size={32} />
         </div>
 
         <h1 className="text-2xl font-black text-center text-white uppercase tracking-wider mb-2">

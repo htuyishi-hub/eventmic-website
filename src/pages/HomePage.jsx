@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Mic, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Zap } from 'lucide-react';
+import { DMMark } from '../components/brand/DMLogo.jsx';
 import { Button } from '../components/ui/Button.jsx';
 import { isValidSessionCode } from '../lib/ids.js';
 
@@ -23,16 +24,16 @@ export function HomePage() {
     <div className="min-h-screen flex flex-col justify-between p-6 max-w-lg mx-auto bg-background text-foreground">
       {/* Header / Hero */}
       <div className="pt-12 text-center space-y-4">
-        <div className="w-16 h-16 rounded-3xl bg-accent flex items-center justify-center text-white mx-auto shadow-xl shadow-accent/25">
-          <Mic size={32} />
+        <div className="flex justify-center text-foreground">
+          <DMMark size={96} recording />
         </div>
 
         <div className="space-y-2">
           <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-            EventMic Web
+            DM
           </h1>
           <p className="text-sm text-muted max-w-xs mx-auto leading-relaxed">
-            Turn any phone into a stage-ready wireless Q&amp;A microphone directly in the browser.
+            Digital microphone. Turn any phone into a stage-ready wireless Q&amp;A microphone, right in the browser.
           </p>
         </div>
 
@@ -125,7 +126,7 @@ export function HomePage() {
 
       {/* Footer */}
       <footer className="text-center text-xs text-muted/60 pb-safe font-mono">
-        EventMic Phase 1 • Pure In-Browser Audio Q&amp;A
+        DM • digital microphone
       </footer>
     </div>
   );

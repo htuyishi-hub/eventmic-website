@@ -17,8 +17,8 @@ export function Button({
   const baseStyles = 'inline-flex items-center justify-center font-bold transition-all select-none rounded-xl active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none disabled:active:scale-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
 
   const variants = {
-    primary: 'bg-accent text-white hover:bg-accent-hover shadow-lg shadow-accent/20 focus-visible:outline-accent',
-    live: 'bg-live text-white hover:bg-red-600 shadow-lg shadow-live/25 focus-visible:outline-live',
+    primary: 'bg-blue-600 text-white hover:bg-blue-700 focus-visible:outline-accent',
+    live: 'bg-red-600 text-white hover:bg-red-700 focus-visible:outline-live',
     secondary: 'bg-surface hover:bg-surface-hover text-foreground border border-border focus-visible:outline-border',
     warning: 'bg-warning text-black hover:bg-amber-400 focus-visible:outline-warning',
     ghost: 'bg-transparent hover:bg-surface text-muted hover:text-foreground focus-visible:outline-border',
@@ -26,7 +26,7 @@ export function Button({
   };
 
   const sizes = {
-    sm: 'text-xs px-3 py-1.5 min-h-[36px]',
+    sm: 'text-xs px-3 py-1.5 min-h-[44px]',
     md: 'text-sm px-4 py-2.5 min-h-[44px]',
     lg: 'text-base px-6 py-3.5 min-h-[48px]',
     huge: 'text-lg px-8 py-4 min-h-[56px] w-full' // 56px touch target for mobile attendee

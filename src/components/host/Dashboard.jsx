@@ -216,7 +216,7 @@ export function Dashboard({ onSessionEndedWithStats }) {
           <span><kbd className="px-1.5 py-0.5 rounded bg-background border border-border font-mono text-[10px] text-white">Q</kbd> QR Code</span>
         </div>
         <div className="hidden sm:block font-mono text-[10px]">
-          EventMic Web Console
+          DM Console
         </div>
       </footer>
 

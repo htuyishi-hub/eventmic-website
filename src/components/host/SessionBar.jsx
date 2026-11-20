@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { QrCode, Copy, Check, Settings, LogOut, Users } from 'lucide-react';
+import { DMMark } from '../brand/DMLogo.jsx';
 import { ConnectionBadge } from './ConnectionBadge.jsx';
 import { Button } from '../ui/Button.jsx';
 import { formatDuration } from '../../lib/time.js';
@@ -43,8 +44,9 @@ export function SessionBar({
     <header className="h-16 px-4 sm:px-6 bg-surface border-b border-border flex items-center justify-between gap-4 flex-shrink-0">
       {/* Left: App Logo & Session Name */}
       <div className="flex items-center gap-3 min-w-0">
-        <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-white font-black text-sm flex-shrink-0 shadow-md shadow-accent/30">
-          EM
+        <div className="flex items-center gap-2 flex-shrink-0 text-foreground" aria-label="DM">
+          <DMMark size={30} />
+          <span className="font-extrabold tracking-wider text-base hidden sm:inline">DM</span>
         </div>
         <div className="min-w-0">
           <div className="flex items-center gap-2">

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Mic, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { DMMark } from '../brand/DMLogo.jsx';
 import { Button } from '../ui/Button.jsx';
 
 const NAME_STORAGE_KEY = 'eventmic_attendee_name';
@@ -41,8 +42,8 @@ export function JoinScreen({ session, onJoin, initialCode }) {
     <div className="min-h-screen flex flex-col justify-between p-6 max-w-md mx-auto bg-background text-foreground">
       {/* Top Session Context */}
       <div className="pt-8 text-center space-y-4">
-        <div className="w-16 h-16 rounded-3xl bg-accent/20 border border-accent/40 flex items-center justify-center text-accent mx-auto shadow-xl shadow-accent/10">
-          <Mic size={32} />
+        <div className="flex justify-center text-foreground">
+          <DMMark size={72} />
         </div>
 
         <div className="space-y-1">
@@ -50,7 +51,7 @@ export function JoinScreen({ session, onJoin, initialCode }) {
             Room Code: {session?.code || initialCode}
           </span>
           <h1 className="text-2xl font-black text-white tracking-tight">
-            {session?.name || 'Live EventMic Session'}
+            {session?.name || 'Live DM Session'}
           </h1>
         </div>
 
