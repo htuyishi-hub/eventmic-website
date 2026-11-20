@@ -7,7 +7,7 @@ import { LiveKitTransport } from './livekitTransport.js';
  * @returns {import('./types.js').TransportInterface}
  */
 export function createTransport(options = {}) {
-  const type = (import.meta.env?.VITE_TRANSPORT || 'mock').toLowerCase();
+  const type = (import.meta.env?.VITE_TRANSPORT || 'livekit').toLowerCase();
 
   if (type === 'livekit') {
     return new LiveKitTransport(options);
